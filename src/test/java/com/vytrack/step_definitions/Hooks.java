@@ -30,13 +30,14 @@ public class Hooks {
      //   Driver.closeDriver();
 
     }
-
+    // this will only gets executed if there is @db tag over the scenario
     @Before("@db")
     public void setUpDB(){
         System.out.println("Connecting to database...");
         DBUtils.createConnection();
     }
 
+    // this will only gets executed if there is @db tag over the scenario
     @After("@db")
     public void tearDownDB(){
         System.out.println("close database connection...");
